@@ -8,3 +8,5 @@ verification/browser-result.json
 .env.*
 
 verification/browser-profile/
+verification/published-profile/
+verification/published-result.json

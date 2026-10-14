@@ -1,7 +1,7 @@
 # おしごとモチくん 検証・制作記録
 
 ## 現在の状態
-ゲーム本体・ローカル検証・GitHub納品は完了。GitHub上のCheck gameも成功。まやの承認を受けGitHub Pages公開設定をGitHub Actionsへ変更し、公開処理を準備中。
+ゲーム本体・ローカル検証・GitHub納品は完了。GitHub上のCheck gameも成功。まやの承認を受けGitHub Pagesを公開。公開先でのプレイ確認も完了。
 
 ## 制作の流れと判断
 1. 指定仕様を読み、Game Studioの2D標準ルートを選択。担当AIは１人、委譲なし。
@@ -68,13 +68,37 @@
 |初見の操作・目標|開始案内、ボタン効果、遊び方、到着時刻を表示。初見の人間によるプレイ評価は未実施|
 |主要試験と記録|12モデル試験、11ブラウザー確認、画像と本記録|
 |ローカル成果物整理|src、public、tests、verification、distに役割別で保存|
-|GitHub反映|19ファイルを指定mainへ反映、リモートtreeを確認、GitHub Actionsのテスト・ビルドも成功|
+|GitHub反映|必要なソース・素材・設定・試験・記録を指定mainへ反映。リモートtreeと内容一致、GitHub Actionsのテスト・ビルド・公開を確認|
 |README記録|操作・技術・スキル・素材・判断・結果・公開方法を記載|
 
 ## 未確認・制約
 Firefox／Safariおよび実スマートフォンでの検証は未実施。Chrome上の小画面幅・マウス操作は検証したが、実機タッチの品質を保証するものではない。
 永続セーブ、音声、難易度選択は今回の目的外。仕事名は３パターンで、数量・時刻は同じ。
-GitHub Pagesの公開はまやから明示承認済み。現在、配信と公開後検証を準備中。
+GitHub Pagesの公開はまやから明示承認済み。配信と公開後検証は完了。
+
+## 公開先の検証
+公開URL： https://maya1377.github.io/oshigoto-mochikun/
+まやの明示承認後、指定リポジトリのPages配信方式をGitHub Actionsへ変更。カスタムドメインや秘密情報は追加していない。
+GitHub ActionsのCheck gameとPublish gameが成功したことを確認。
+
+`npm run test:published` で公開先を実Chromeから検証：
+- HTTP 200、開始案内とCanvas描画。
+- 公開先のJS・CSSファイル名が、ローカルの最終ビルドのものと一致。
+- 仕事・先送り・休憩で正しい時間／疲労変化。
+- 通常操作で６件を完了して勝利、結果から再プレイ。
+- THIRD_PARTY_NOTICES.txtの配信。
+- 実行／コンソールエラー0件、ゲームのリクエストは公開サイト内のみ。
+
+追加画像：`verification/screenshots/10-published-playing.png`、`11-published-victory.png`。
+追加結果：`verification/published-result.json`（ローカルのみ）。
+公開試験用の一時プロフィールも終了後に削除。公開されたゲームのタブだけ、まやが遊べる成果物として残す。
+
+## 納品完了・後片付け
+ソース、専用素材、ライセンス表記、ビルド設定、再現可能な試験、READMEと本記録を指定GitHubリポジトリへ反映。
+生成されたdist、node_modules、試験画像11枚、結果JSONは用途を明記して専用フォルダー内に保持し、GitHubには含めない。
+一時ブラウザー、プロフィール、試験HTTPサーバーは終了・削除済み。指定外のゲームやChatGPTの既存会話をテストに使っていない。
+PCのGitには認証を追加していない。GitHub納品は接続済みツールで行い、強制プッシュをせず、ローカルにもリモートの履歴をマージして保全した。
+
 
 ## 参考にした一次資料
 - [Phaser公式](https://docs.phaser.io/phaser/getting-started/what-is-phaser)
