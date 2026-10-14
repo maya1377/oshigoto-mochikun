@@ -57,10 +57,10 @@ Phaser 3.90 / TypeScript 5.9 / Vite 7.3.7。Game Studioの2D標準ルートを�
 
 ## 進捗・次の作業
 
-ゲーム実装とローカル検証は完了。モデル試験12件、実Chromeのプレイテスト11項目、配信ビルドに成功。GitHub納品を準備中。詳しい工程と結果は verification/REPORT.md を参照。
+ゲーム実装とローカル検証は完了。モデル試験12件、実Chromeのプレイテスト11項目、配信ビルドに成功。GitHub納品済み。GitHub上の自動テスト・ビルドも成功。詳しい工程と結果は verification/REPORT.md を参照。
 
 ## 公開・既知の制約
 
-GitHub Pagesの公開設定はまやの承認後に変更。baseは相対指定で、リポジトリ配下へ配置可能。公開は現時点で未実施。
+まやの承認を受け、GitHub Pagesの公開設定をGitHub Actionsへ変更。公開処理を準備中。mainの変更でテスト・ビルド・公開が実行される。baseは相対指定で、リポジトリ配下へ配置可能。
 
 永続セーブ、音声、自由な難易度設定は対象外。現代的なブラウザーのHTML dialogとCanvasに対応する必要がある。
