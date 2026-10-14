@@ -1,0 +1,10 @@
+node_modules/
+dist/
+verification/screenshots/
+verification/browser-result.json
+*.log
+.DS_Store
+.env
+.env.*
+
+verification/browser-profile/
