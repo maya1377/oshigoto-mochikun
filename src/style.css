@@ -11,3 +11,4 @@ dialog{border:1px solid #bccab0;border-radius:20px;padding:0;max-width:460px;wid
 /* Keep action costs, schedule and job progress readable at every width. */
 .action span{font-size:14px}.job-meta{font-size:12px}.job-progress{font-size:14px}.selection{font-size:14px}.clock-block>span:last-child,.progress-block>span:last-child,#fatigue-tip{font-size:13px}.howto li{font-size:14px}.intro-tip{font-size:14px!important}
 @media(max-width:480px){.action span{font-size:12px}.job-meta{font-size:12px}.selection{font-size:13px}.howto li{font-size:13px}.turn-note{font-size:12px}.action.defer span{font-size:13px}}
+.action .cost-fragment{display:inline;white-space:nowrap;margin:0;font-size:inherit}

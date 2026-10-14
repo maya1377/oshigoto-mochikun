@@ -21,7 +21,8 @@ function render() {
   el('office').setAttribute('aria-label',`オフィスのモチくん。${mood} 疲労${state.fatigue}。`);
   el('selection').textContent=job?`取りかかる仕事：${job.title}`:'今届いている仕事は完了。次の仕事まで休憩しよう。';
   el<HTMLButtonElement>('work').disabled=!active||!job||locked;el<HTMLButtonElement>('rest').disabled=!active||locked;el<HTMLButtonElement>('defer').disabled=!active||!job||job.deferred||locked;
-  el('work-hint').textContent=`30分 / 進捗＋${job?Math.min(3,job.total-job.done):3} / 疲労＋${cost(state)}`;
+  const hint=el('work-hint');hint.replaceChildren();
+  for(const [i,text] of ['30分',`進捗＋${job?Math.min(3,job.total-job.done):3}`,`疲労＋${cost(state)}`].entries()){if(i)hint.append(document.createTextNode(' / '));const part=document.createElement('span');part.className='cost-fragment';part.textContent=text;hint.append(part);}
   el('defer').title=job?.deferred?'この仕事はすでに先送りしたよ。':'';
   el('leave').hidden=!active||!complete(state);el<HTMLButtonElement>('leave').disabled=locked;
   el('inbox-count').textContent=`${ready.length}件待ち`;
